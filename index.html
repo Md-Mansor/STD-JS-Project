@@ -6,15 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drink IT</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-    <h1>HELLO Cocktail</h1>
+    <div class="mainContainer">
+        <div class="drinkContainer" id="drinkData">
 
-    <section class="drinkContainer" id="drinkData">
+        </div>
 
-    </section>
+        <div class="cartContainer">
+            <h1>Your Cart :- <span id="totalItem">0</span></h1>
+            <div id="cartData" class="cartData">
 
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="openModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="openModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 
