@@ -9,36 +9,44 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
-<body>
-    <div class="mainContainer">
-        <div class="drinkContainer" id="drinkData">
-
+<body class="container">
+    <header class="w-50 mx-auto p-3">
+        <div class="input-group mb-3">
+            <input type="text" id="search-field" class="form-control" placeholder="Search By Name"
+                aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-info" type="button" id="search-button">Search</button>
         </div>
-
-        <div class="cartContainer">
-            <h1>Your Cart :- <span id="totalItem">0</span></h1>
-            <div id="cartData" class="cartData">
+    </header>
+    <main>
+        <div class="mainContainer">
+            <div class="drinkContainer" id="drinkData">
 
             </div>
-        </div>
-    </div>
-    <div class="modal fade" id="openModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="openModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+            <div class="cartContainer border border-2 border-info p-3 rounded">
+                <h1>Your Cart :- <span id="totalItem">0</span></h1>
+                <div id="cartData" class="cartData">
+
                 </div>
             </div>
         </div>
-    </div>
-
+        <div class="modal fade" id="openModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="openModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>

@@ -26,6 +26,26 @@ const showData = (drinkData) => {
         container.appendChild(div);
     });
 }
+
+const searchInput = document.getElementById("search-field");
+const searchButton = document.getElementById("search-button");
+
+searchButton.addEventListener("click", () => {
+    const searchValue = searchInput.value;
+
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchValue}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.drinks) {
+                showData(data.drinks);
+            } else {
+                alert("No results found!");
+                searchInput.value = "";
+            }
+        })
+});
+
+
 let cartCount = 0;
 const handleAddToCart = (name, image) => {
 
