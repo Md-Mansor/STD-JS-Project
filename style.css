@@ -2,7 +2,7 @@
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  width: 250px;
+  width: 280px;
   padding: 15px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -42,6 +42,7 @@
 }
 .cartContainer h1 {
   text-align: center;
+  font-weight: bold;
 }
 .cart-item {
   display: flex;

@@ -15,11 +15,11 @@ const showData = (drinkData) => {
         div.classList.add("drinks");
         div.innerHTML = `
         <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}" />
-        <h4>Name: ${drink.strGlass.slice(0, 14)}</h4>
-        <p>Category: ${drink.strCategory.slice(0, 12)}</p>
+        <h4>Name: ${drink.strDrink}</h4>
+        <p>Category: ${drink.strCategory.slice(0, 15)}</p>
         <p>Details: ${drink.strInstructions.slice(0, 15)}...</p>
         <div class="d-flex justify-content-evenly">
-        <button onclick="handleAddToCart('${drink.strGlass}','${drink.strDrinkThumb}')">Add To Cart</button>
+        <button onclick="handleAddToCart('${drink.strDrink}','${drink.strDrinkThumb}')">Add To Cart</button>
         <button onclick="handleSeeDetails('${drink.idDrink}')">Details</button>
         </div>
         `;
@@ -32,12 +32,14 @@ const searchButton = document.getElementById("search-button");
 
 searchButton.addEventListener("click", () => {
     const searchValue = searchInput.value;
-
+    const container = document.getElementById("drinkData");
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchValue}`)
         .then(response => response.json())
         .then(data => {
             if (data.drinks) {
+                container.innerHTML = "";
                 showData(data.drinks);
+
             } else {
                 alert("No results found!");
                 searchInput.value = "";
@@ -48,6 +50,11 @@ searchButton.addEventListener("click", () => {
 
 let cartCount = 0;
 const handleAddToCart = (name, image) => {
+
+    const button = event.target;
+    button.disabled = true;
+    button.textContent = "Already Added";
+    button.style.backgroundColor = "gray";
 
     const totalCart = document.getElementById("totalItem").innerText;
     let convertToNumber = parseInt(totalCart);
